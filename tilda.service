@@ -1,0 +1,10 @@
+[unit]
+Description=Reminder to Update System
+PartOf=graphical-session-target
+
+[Service]
+ExecStart=bash -c 'tilda'
+Type=oneshot
+
+[Install]
+WantedBy=graphical-session.target

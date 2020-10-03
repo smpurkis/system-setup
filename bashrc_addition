@@ -1,0 +1,7 @@
+
+alias bs="nano ~/.bashrc"
+
+export PATH="${PATH}:~/.local/bin"
+export PYTHONPATH="${PYTHONPATH}:~/.local/bin"
+
+fish
