@@ -1,4 +1,6 @@
 
+alias fishbs="nano ~/.config/fish/config.fish"
+
 alias bs="nano ~/.bashrc"
 
 export PATH="${PATH}:~/.local/bin"

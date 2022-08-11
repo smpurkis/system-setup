@@ -3,7 +3,7 @@ Description=Reminder to Update System
 PartOf=graphical-session-target
 
 [Service]
-ExecStart=bash -c 'tilda'
+ExecStart=bash -c 'guake'
 Type=oneshot
 
 [Install]
