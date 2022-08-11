@@ -1,8 +1,8 @@
 #!/usr/bin/env bash -x
 
 # install set of requirements
-sudo add-apt-repository ppa:linuxuprising/guake -y
 sudo add-apt-repository ppa:apt-fast/stable -y
+echo "deb-src https://deb.volian.org/volian/ scar main" | sudo tee -a /etc/apt/sources.list.d/volian-archive-scar-unstable.list
 sudo apt update
 sudo apt install nala -y
 sudo nala install fish tmux guake -y
