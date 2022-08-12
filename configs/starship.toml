@@ -4,7 +4,7 @@
 # Inserts a blank line between shell prompts
 add_newline = false
 
-format = """$all$time$shell$status$character"""
+format = """$all$shell$status$character"""
 # format = """$username$time$shell"""
 
 # Replace the "❯" symbol in the prompt with "➜"
