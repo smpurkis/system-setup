@@ -53,7 +53,7 @@ cp $PWD/configs/guake.config ~/.config/
 guake --restore-preferences ~/.config/guake.config
 chmod 644 $PWD/configs/guake.service 
 mkdir --parents ~/.config/systemd/user/
-mv $PWD/configs/guake.service $_
+cp $PWD/configs/guake.service ~/.config/systemd/user/
 systemctl --user enable guake.service
 systemctl --user daemon-reload
 
