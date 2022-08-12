@@ -41,10 +41,13 @@ format = "via [🎁 $version](208 bold) "
 
 [time]
 disabled = false
+style = "bold fg:27"
 
 [username]
 disabled = false
 show_always = true
+# style = "red"
+format = "[$user](bold fg:130) in "
 
 [directory]
 truncation_length = 6
