@@ -1,0 +1,12 @@
+
+alias fishbs="nano ~/.config/fish/config.fish"
+
+alias bs="nano ~/.bashrc"
+alias sw="sudo swapoff -a; sudo swapon -a"
+
+export PATH="${PATH}:~/.local/bin"
+export PYTHONPATH="${PYTHONPATH}:~/.local/bin"
+
+if [ "$WITH_FISH" == "true" ];
+    fish
+fi
