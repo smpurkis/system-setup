@@ -1,0 +1,10 @@
+{
+    "TorDisabled": true,
+    "IncognitoModeAvailability": 1,
+    "ForceSafeSearch": true,
+    "ForceYouTubeSafetyMode": true,
+    "ForceGoogleSafeSearch": true,
+    "ForceYouTubeRestrict": 1,
+    "SafeSitesFilterBehavior": 1,
+    "BrowserGuestModeEnabled": false
+}

@@ -57,4 +57,7 @@ cp $PWD/configs/guake.service ~/.config/systemd/user/
 systemctl --user enable guake.service
 systemctl --user daemon-reload
 
+cp $PWD/configs/browser_policies/brave_policy.json /etc/brave/policies/managed/
+cp $PWD/configs/browser_policies/chrome_policy.json /etc/opt/chrome/policies/managed/
+
 echo "Reboot to have settings take effect"
