@@ -9,7 +9,7 @@ format = """$all$shell$status$character"""
 
 # Replace the "❯" symbol in the prompt with "➜"
 [character] # The name of the module we are configuring is "character"
-success_symbol = "[➜](bold green)" # The "success_symbol" segment is being set to "➜" with the color "bold green"
+success_symbol = "[➜](bold fg:#23d18b)" # The "success_symbol" segment is being set to "➜" with the color "bold green"
 error_symbol = "[➜](bold red)"
 # Disable the package module, hiding it from the prompt completely
 
@@ -41,13 +41,13 @@ format = "via [🎁 $version](208 bold) "
 
 [time]
 disabled = false
-style = "bold fg:27"
+style = "fg:#8BE9FD"
 
 [username]
 disabled = false
 show_always = true
 # style = "red"
-format = "[$user](bold fg:130) in "
+format = "[$user](bold fg:#ffb86c) in "
 
 [directory]
 truncation_length = 6
@@ -92,7 +92,7 @@ disabled = false
 
 [hostname]
 ssh_only = true
-format = "[$ssh_symbol](bold blue) on [$hostname](bold red) "
+format = "[$ssh_symbol](bold fg:#8BE9FD) on [$hostname](bold red) "
 trim_at = ".companyname.com"
 disabled = false
 

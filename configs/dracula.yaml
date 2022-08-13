@@ -5,7 +5,7 @@ themes:
     # From https://github.com/dracula/zellij
     bg: [100, 100, 100]
     red: [255, 85, 85]
-    green: [80, 250, 123]
+    green: [35, 209, 139]
     yellow: [241, 250, 140]
     blue: [98, 114, 164]
     magenta: [255, 121, 198]
