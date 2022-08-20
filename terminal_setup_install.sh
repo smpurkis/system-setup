@@ -57,6 +57,14 @@ cp $PWD/configs/guake.service ~/.config/systemd/user/
 systemctl --user enable guake.service
 systemctl --user daemon-reload
 
+# add utils scripts to start on boot
+cd $PWD/util_scripts/ && poetry install && cd ..
+chmod 644 $PWD/util_scripts/utils.service 
+mkdir --parents ~/.config/systemd/user/
+cp $PWD/util_scripts/utils.service ~/.config/systemd/user/
+systemctl --user enable utils.service
+systemctl --user daemon-reload
+
 cp $PWD/configs/browser_policies/brave_policy.json /etc/brave/policies/managed/
 cp $PWD/configs/browser_policies/chrome_policy.json /etc/opt/chrome/policies/managed/
 

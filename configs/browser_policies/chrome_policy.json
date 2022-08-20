@@ -6,5 +6,6 @@
     "ForceGoogleSafeSearch": true,
     "ForceYouTubeRestrict": 1,
     "SafeSitesFilterBehavior": 1,
-    "BrowserGuestModeEnabled": false
+    "BrowserGuestModeEnabled": false,
+    "BrowserAddPersonEnabled": false
 }
