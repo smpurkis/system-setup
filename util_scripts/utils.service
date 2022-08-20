@@ -1,0 +1,10 @@
+[unit]
+Description=Reminder to Update System
+PartOf=graphical-session-target
+
+[Service]
+ExecStart=poetry run python3 key_utils.py
+Type=oneshot
+
+[Install]
+WantedBy=graphical-session.target
