@@ -25,6 +25,10 @@ set -U fish_pager_color_description B3A06D yellow
 set -U fish_pager_color_prefix normal --bold --underline
 set -U fish_pager_color_progress brwhite --background=cyan
 
+# set -g theme_powerline_fonts no
+set -g theme_nerd_fonts yes
+set -g fish_prompt_pwd_dir_length 0
+
 starship init fish | source
 alias t="zellij --layout main_layout"
 
@@ -32,5 +36,5 @@ alias gucon="nano ~/.config/guake.config"
 alias stcon="nano ~/.config/starship.toml"
 alias zecon="nano ~/.config/zellij/config.yaml"
 
-eval ~/miniconda3/bin/conda "shell.fish" "hook" $argv | sourc
-mamba deactivate
+eval ~/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+conda deactivate
