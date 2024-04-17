@@ -49,7 +49,10 @@
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
-
+  
+  # services.xserver.displayManager.sddm.wayland.enable = true;
+  # services.xserver.displayManager.sddm.enable = true;
+  
   programs.hyprland = {
     enable = true;
     enableNvidiaPatches = true;
@@ -80,7 +83,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
+    jack.enable = true;
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
@@ -136,7 +139,22 @@
     direnv
     kitty
     gtk3
+
+    rofi-wayland
+    wofi
+
+    waybar
+    (pkgs.waybar.overrideAttrs (oldAttrs: {
+    mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+      })
+    )
+    dunst
+    libnotify
+
   ];
+
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
