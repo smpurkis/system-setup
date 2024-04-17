@@ -49,7 +49,12 @@
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
-  
+
+  programs.hyprland = {
+    enable = true;
+    enableNvidiaPatches = true;
+    xwayland.enable = true;
+  };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -159,13 +164,6 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
-
-
-  programs.hyprland = {
-    enable = true;
-    enableNvidiaPatches = true;
-    xwayland.enable = true;
-  };
 
   environment.sessionVariables = {
     # If your cursor becomes invisible

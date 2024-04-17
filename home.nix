@@ -23,7 +23,32 @@
     steam
 
     git
+    
+    fish
+    starship
+    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+
+    rustup
   ];
+
+  fonts.fontconfig.enable = true;
+
+  programs.fish.enable = true;
+
+  programs.starship = {
+    # Configuration written to ~/.config/starship.toml
+    settings = {
+      # add_newline = false;
+
+      # character = {
+      #   success_symbol = "[➜](bold green)";
+      #   error_symbol = "[➜](bold red)";
+      # };
+
+      # package.disabled = true;
+    };
+  };
+
   
   nixpkgs.config.allowUnfreePredicate = _: true;
 
@@ -63,5 +88,4 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  programs.fish.enable = true;
 }
