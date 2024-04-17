@@ -27,6 +27,7 @@
     fish
     starship
     (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+    killall
 
     rustup
   ];

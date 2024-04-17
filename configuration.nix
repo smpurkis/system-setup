@@ -43,21 +43,25 @@
     LC_TIME = "en_GB.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.xserver = {
+    enable = true;  
+    displayManager.gdm = {
+      enable = true;  
+      wayland = false; 
+    };
+    desktopManager.gnome.enable = true; 
+  };
   
   # services.xserver.displayManager.sddm.wayland.enable = true;
   # services.xserver.displayManager.sddm.enable = true;
+  # xdg.portal.enable = true;
+  # xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   
-  programs.hyprland = {
-    enable = true;
-    enableNvidiaPatches = true;
-    xwayland.enable = true;
-  };
+  # programs.hyprland = {
+  #   enable = true;
+  #   enableNvidiaPatches = true;
+  #   xwayland.enable = true;
+  # };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -121,8 +125,8 @@
   };
 
   # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "sam";
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "sam";
 
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
   systemd.services."getty@tty1".enable = false;
@@ -136,25 +140,21 @@
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
-    direnv
-    kitty
-    gtk3
+    # direnv
+    # kitty
+    # gtk3
 
-    rofi-wayland
-    wofi
+    # rofi-wayland
+    # wofi
 
-    waybar
-    (pkgs.waybar.overrideAttrs (oldAttrs: {
-    mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-      })
-    )
-    dunst
-    libnotify
-
+    # waybar
+    # (pkgs.waybar.overrideAttrs (oldAttrs: {
+    # mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+    #   })
+    # )
+    # dunst
+    # libnotify
   ];
-
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -183,12 +183,12 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
 
-  environment.sessionVariables = {
-    # If your cursor becomes invisible
-    WLR_NO_HARDWARE_CURSORS = "1";
-    # Hint electron apps to use wayland
-    NIXOS_OZONE_WL = "1";
-  };
+  # environment.sessionVariables = {
+  #   # If your cursor becomes invisible
+  #   WLR_NO_HARDWARE_CURSORS = "1";
+  #   # Hint electron apps to use wayland
+  #   NIXOS_OZONE_WL = "1";
+  # };
 
  # Enable OpenGL
   hardware.opengl = {
