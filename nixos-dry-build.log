@@ -1,0 +1,38 @@
+building the system configuration...
+warning: Git tree '/etc/nixos' is dirty
+these 18 derivations will be built:
+  /nix/store/0iv0qdq176msbg8azbwbffl5nwrhzw7n-disable-breaking-updates.py.drv
+  /nix/store/5i923vaxmfw9nyjw0w4hkl9s0mx3s64w-discord.desktop.drv
+  /nix/store/rfh8w8hw02w1yjb8zajj45nmlrbnndv6-discord-0.0.49.tar.gz.drv
+  /nix/store/aad88hfic03d09nn5h6nv1xw55hq0n4y-discord-0.0.49.drv
+  /nix/store/x23aa5f4vpckgf3qg84n6cjyqhid4m25-home-manager-path.drv
+  /nix/store/0ldr9522f96fka7gygbgf4j4nqv1ry9c-hm_fontconfigconf.d10hmfonts.conf.drv
+  /nix/store/0m44yakjj9dwsbn7p9r9xmgjxba75xgx-activation-script.drv
+  /nix/store/3l7j89yzmpn7p8i6h8123wamzmj5qp0h-man-paths.drv
+  /nix/store/1vc6zv0aygqh6anwz8bjih5l6xk0c9i2-man-cache.drv
+  /nix/store/l8l9p2r8wv632azs0ypdr9hjsvz7cg69-discord-0.0.49-fish-completions.drv
+  /nix/store/mfl88c2g82rvwgbnkydabp4v3fzk8dpn-sam-fish-completions.drv
+  /nix/store/pwjrf7qla71lk3vfm4ybx0fyam8i7zzf-hm_.manpath.drv
+  /nix/store/f2hf87vzdslwynlphlg9bbpdxmvlsia9-home-manager-files.drv
+  /nix/store/6ihmh5yjkd4pv9ihvrf07ib0jkja008h-home-manager-generation.drv
+  /nix/store/q878zygmy4mh8c0shmkz8dm89lfz3ami-unit-home-manager-sam.service.drv
+  /nix/store/dahzij2v3xy1fz8d7pjl2g8n8zgric7n-system-units.drv
+  /nix/store/cb3q33x14hfw2bcxv8pnhygcdsxf9rwa-etc.drv
+  /nix/store/484kl7sarj0y26800phj9bdaamnq1lsl-nixos-system-nixos-24.05.20240416.5672bc9.drv
+these 16 paths will be fetched (1.88 MiB download, 12.27 MiB unpacked):
+  /nix/store/n1ipj0ymgyd5blk8y19adra67gpc58sw-alsa-lib-1.2.11-dev
+  /nix/store/f6y9129l5bv6i58aah4ikk9khm8xbiji-auto-patchelf-hook
+  /nix/store/li6hvanskij8agwk8vcjlwisvbjpyi0c-binutils-wrapper-2.41
+  /nix/store/iyr8c1n75jxwnrswb3ligv55z7dc5aw4-dee-unstable-2017-06-16
+  /nix/store/ja7w6g3dqgszp4gbyv81005bxpas2chv-expand-response-params
+  /nix/store/34zidbf6bsv5zhf0li9r49xqhmy9ziy7-libappindicator-gtk3-12.10.1+20.10.20200706.1
+  /nix/store/q28x84h4npmmwycq44481sir5m9jnv96-libcxx-17.0.6
+  /nix/store/njw23bh48h17f4mxb1zywv1gn89brz6r-libdrm-2.4.120-dev
+  /nix/store/b5c7vd26qigck6irwxs1j0db8wlyhhh1-libunity-unstable-2021-02-01
+  /nix/store/chk10nr7lnd55jprx6mqfgy7kc9nmz5f-libxshmfence-1.3.2-dev
+  /nix/store/jhxwa57l6cvs6xp0yl7yhr4ryp05v61z-mesa-24.0.3-dev
+  /nix/store/kncmv1qa2fzvxqzbz39fp1mka6z73cin-nspr-4.35-dev
+  /nix/store/5y1x5qxclxf2p16gpf4c92jrx61hr783-nss-3.90.2-dev
+  /nix/store/n7vid2xx7h3arpabsif5jzz3cnsg207n-python3-3.11.8-env
+  /nix/store/6a6c58f04183pmnq795lpvn35fdyiaxx-python3.11-pyelftools-0.30
+  /nix/store/6lwpqjzka4lpjm3j0mljknla9a2h8lmy-util-linux-minimal-2.39.3-dev

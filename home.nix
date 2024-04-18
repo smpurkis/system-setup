@@ -21,6 +21,7 @@
     microsoft-edge
     vscode
     steam
+    discord
 
     git
     
@@ -31,6 +32,22 @@
 
     rustup
   ];
+
+  # programs.microsoft-edge.extraOpts = {
+  #   "BrowserSignin" = 0;
+  #   "SyncDisabled" = true;
+  #   "PasswordManagerEnabled" = true;
+  #   "SpellcheckEnabled" = true;
+  #   "BrowserAddProfileEnabled" = false;
+  #   "BrowserGuestModeEnabled" = false;
+  #   "FamilySafetySettingsEnabled" = true;
+  #   "ForceBingSafeSearch" = 2;
+  #   "ForceGoogleSafeSearch" = true;
+  #   "ForceYouTubeRestrict" = 1;
+  #   "HubsSidebarEnabled" = false;
+  #   "InPrivateModeAvailability" = 1;
+  #   "SearchFiltersEnabled" = true;
+  # };
 
   fonts.fontconfig.enable = true;
 
