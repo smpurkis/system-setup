@@ -24,3 +24,5 @@ git push
 # Apply the changes and log the output
 sudo nixos-rebuild switch --flake /etc/nixos/#default &>nixos-switch.log || (
  cat nixos-switch.log | grep --color error && false)
+
+rm nixos-dry-build.log nixos-switch.log

@@ -22,6 +22,8 @@
     vscode
     steam
     discord
+    obsidian
+    spotify
 
     git
     gh
