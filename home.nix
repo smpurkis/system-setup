@@ -24,6 +24,7 @@
     discord
 
     git
+    gh
     
     fish
     starship
