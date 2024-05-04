@@ -24,7 +24,6 @@
     discord
     obsidian
     spotify
-    discord
 
     git
     gh
