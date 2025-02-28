@@ -20,22 +20,30 @@
   home.packages = with pkgs; [
     microsoft-edge
     vscode
-    steam
+    # steam
     discord
     obsidian
     spotify
 
     git
     gh
+    wget
     
     fish
     starship
-    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
     killall
+    htop
 
     rustup
-  ];
+    python3
 
+    cmake
+    gcc
+    libgcc
+    gnumake
+
+    cudatoolkit
+  ];
   # programs.microsoft-edge.extraOpts = {
   #   "BrowserSignin" = 0;
   #   "SyncDisabled" = true;
