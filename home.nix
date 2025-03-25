@@ -43,6 +43,8 @@
     gnumake
 
     cudatoolkit
+
+    # docker
   ];
   # programs.microsoft-edge.extraOpts = {
   #   "BrowserSignin" = 0;

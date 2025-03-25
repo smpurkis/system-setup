@@ -103,7 +103,7 @@
   users.users.sam = {
     isNormalUser = true;
     description = "Sam";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
     ];
   };
@@ -208,12 +208,24 @@
   #   NIXOS_OZONE_WL = "1";
   # };
 
+
+  virtualisation.docker.enable = true;
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+    # enableOnBoot = true;
+  };
+
+  hardware.nvidia-container-toolkit.enable = true;
+
   # Enable OpenGL
   hardware.graphics.enable = true;
 
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = ["nvidia"];
   nix.settings.substituters = [ "https://cuda-maintainers.cachix.org"];
+
+  
 
   hardware.nvidia = {
 
@@ -242,6 +254,7 @@
     # Enable the Nvidia settings menu,
 	  # accessible via `nvidia-settings`.
     nvidiaSettings = true;
+    
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.stable;
