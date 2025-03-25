@@ -1,5 +1,23 @@
 { config, pkgs, ... }:
 
+let
+  # Function to create a wrapper for Electron apps that preserves desktop entries
+  wrapElectronApp = pkg: name: pkgs.symlinkJoin {
+    inherit name;
+    paths = [ pkg ];
+    buildInputs = [ pkgs.makeWrapper ];
+    postBuild = ''
+      # Find all desktop files and patch them
+      find $out/share/applications -name "*.desktop" -exec sed -i \
+        "s|Exec=${pkg}/bin/${name}|Exec=$out/bin/${name}|g" {} \;
+      
+      # Wrap the binary with --no-sandbox
+      rm $out/bin/${name}
+      makeWrapper ${pkg}/bin/${name} $out/bin/${name} \
+        --add-flags "--no-sandbox"
+    '';
+  };
+in
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -13,18 +31,21 @@
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
-  home.stateVersion = "23.11"; # Please read the comment before changing.
+  home.stateVersion = "24.11"; # Please read the comment before changing.
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
+    # Wrap Electron-based apps properly to preserve desktop entries
+    # (wrapElectronApp microsoft-edge "microsoft-edge")
     microsoft-edge
-    vscode
-    # steam
-    discord
-    obsidian
-    spotify
-
+    # (wrapElectronApp vscode "code")ˀ
+    (wrapElectronApp discord "discord")
+    (wrapElectronApp obsidian "obsidian")
+    # Spotify might need the same treatment
+    (wrapElectronApp spotify "spotify")
+    
+    # Non-Electron apps that don't need the sandbox workaround
     git
     gh
     wget
@@ -42,7 +63,7 @@
     libgcc
     gnumake
 
-    cudatoolkit
+    # cudatoolkit
 
     # docker
   ];
@@ -62,9 +83,33 @@
   #   "SearchFiltersEnabled" = true;
   # };
 
+  targets.genericLinux.enable = true;
+  xdg.enable = true;
+
   fonts.fontconfig.enable = true;
 
-  programs.fish.enable = true;
+  programs.fish = {
+    enable = true;
+    interactiveShellInit = ''
+      # Any fish shell initialization commands can go here
+    '';
+  };
+  
+  # Set fish as default shell
+  home.shellAliases = {
+    # Add any shell aliases here
+  };
+  
+  # This will properly set fish as your default shell
+  targets.genericLinux.extraXdgDataDirs = [];
+  
+  programs.bash.enable = true;
+  programs.bash.initExtra = ''
+    if [[ -z "$INSIDE_EMACS" && -z "$TMUX" && -z "$FISH_INITIALIZED" ]]; then
+      export FISH_INITIALIZED=1
+      exec fish
+    fi
+  '';
 
   programs.starship = {
     # Configuration written to ~/.config/starship.toml
@@ -115,6 +160,7 @@
   #
   home.sessionVariables = {
     EDITOR = "nano";
+    PATH = "$HOME/.nix-profile/bin:$PATH";
   };
 
   # Let Home Manager install and manage itself.

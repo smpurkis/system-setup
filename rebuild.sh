@@ -1,4 +1,8 @@
-#!/usr/bin/env bash +x
+#!/usr/bin/env bash
+
+# Example usage:
+# ./rebuild.sh "Update the system configuration"
+
 
 # Exit on any error
 set -e
@@ -11,8 +15,8 @@ then
 fi
 
 # Check the config files
-sudo nixos-rebuild dry-build --flake /etc/nixos/#default &>nixos-dry-build.log || (
- cat nixos-dry-build.log | grep --color error && false)
+home-manager build --flake .#sam &>home-manager-build.log || (
+ cat home-manager-build.log | grep --color error && false)
 
 # Commit any changes
 git add -A
@@ -22,7 +26,7 @@ git commit -m "$1"
 git push
 
 # Apply the changes and log the output
-sudo nixos-rebuild switch --flake /etc/nixos/#default &>nixos-switch.log || (
- cat nixos-switch.log | grep --color error && false)
+home-manager switch --flake .#sam -b backup &>home-manager-switch.log || (
+ cat home-manager-switch.log | grep --color error && false)
 
-rm nixos-dry-build.log nixos-switch.log
+rm home-manager-build.log home-manager-switch.log

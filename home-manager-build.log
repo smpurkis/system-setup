@@ -1,0 +1,8 @@
+warning: Git tree '/home/sam/.config/home-manager' is dirty
+trace: warning: The option `targets.genericLinux.extraXdgDataDirs' defined in `/nix/store/92gwm29z4vfwhkcsy87j8fwshn4m0kld-source/home.nix' has been renamed to `xdg.systemDirs.data'.
+warning: Git tree '/home/sam/.config/home-manager' is dirty
+trace: warning: The option `targets.genericLinux.extraXdgDataDirs' defined in `/nix/store/76ss4qm2iild2hx4xpvii20n1px14y20-source/home.nix' has been renamed to `xdg.systemDirs.data'.
+
+There are 174 unread and relevant news items.
+Read them by running the command "home-manager news".
+
